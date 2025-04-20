@@ -1,0 +1,17 @@
+button {
+    border: 1px solid --text-light;
+    background-color: --button-blue;
+    width: 1.4em;
+    height: 1.4em;
+    position: relative;
+    line-height: 0em;
+    padding: 0em;
+    border-radius: 2em;
+    font-size: 1em;
+}
+
+.infoPopover {
+    display: block;
+    position: static;
+    background-color: darkcyan;
+}
