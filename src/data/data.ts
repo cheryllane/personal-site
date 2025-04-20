@@ -1,3 +1,4 @@
+// Set type for squares in any cage
 export type square = {
     numberOfSquares: number;
     combinations: {
@@ -18,7 +19,7 @@ const powerSet = (numbers: number[]) => {
     return result;
 };
 
-export const numbers = Array.from({ length: 9 }, (x, i) => i + 1);
+export const numbers = Array.from({ length: 9 }, (_x, i) => i + 1);
 
 export const data = () => {
     const cageReference: square[] = [];
