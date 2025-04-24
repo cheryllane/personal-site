@@ -1,19 +1,13 @@
-#root {
-    max-width: 60rem;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: left;
-}
-
 .card {
     padding: 2em;
     display: flex;
+    flex-wrap: wrap;
 }
 
-.card .card-left {
-    flex-grow: 1;
+.card .card-header {
+    flex: 0 0 100%;
 }
 
-.card .card-right {
-    flex-grow: 1;
+.card .card-text {
+    flex: 0 0 100%;
 }

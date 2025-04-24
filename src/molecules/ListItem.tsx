@@ -17,7 +17,7 @@ function ListItem({
 }) {
     return (
         <>
-            <li>
+            <li style={{ listStyle: "none" }}>
                 <form>
                     <input
                         id={`checkbox-${ID}`}
