@@ -8,7 +8,7 @@ const Header = ({ menuLinks }: { menuLinks: MenuLinks }) => {
     return (
         <>
             <div className="banner">
-                <a href="/">Hi, I'm Cheryl</a>
+                <a href="/">🪴</a>
                 <nav role="navigation" aria-label="main menu">
                     <button
                         aria-expanded={expanded}
