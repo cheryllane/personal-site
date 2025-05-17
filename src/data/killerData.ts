@@ -44,7 +44,6 @@ export const data = () => {
                     indexOfTotal
                 ].possibleSets.push(currentValue);
             } else {
-                console.log(currentValue);
                 cageReference[indexOfSquares].combinations.push({
                     total: currentTotal,
                     possibleSets: [currentValue],
@@ -52,8 +51,6 @@ export const data = () => {
             }
         }
     });
-
-    console.log(cageReference);
 
     return cageReference;
 };

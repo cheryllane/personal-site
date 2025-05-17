@@ -1,17 +1,25 @@
-import { useState } from "react";
-import { data } from "../data/killerData";
+import { useEffect, useState } from "react";
+import { data, square } from "../data/killerData";
 import "./Killer.css";
 
 function Killer() {
     // Filter the number of squares in a cage
     const [squaresFilter, setSquaresFilter] = useState<number | null>(null);
+    const [killerData, setKillerData] = useState<square[]>();
+
+    useEffect(() => {
+        setKillerData(data());
+
+        return () => {};
+    }, []);
 
     return (
         <>
             <p>Filter number of squares in the cage:</p>
-            {data().map((a) => {
+            {killerData?.map((a) => {
                 return (
                     <button
+                        key={a.numberOfSquares}
                         aria-disabled={squaresFilter === a.numberOfSquares}
                         onClick={(e) => {
                             e.preventDefault;
@@ -31,23 +39,29 @@ function Killer() {
             >
                 Clear
             </button>
-            {data().map((a) => {
+            {killerData?.map((a) => {
                 return (
                     <>
                         {(squaresFilter === a.numberOfSquares ||
                             squaresFilter === null) && (
-                            <div>
+                            <div key={a.numberOfSquares}>
                                 <h2>{a.numberOfSquares}</h2>
                                 {a.combinations.map((b) => {
                                     return (
-                                        <li>
+                                        <li key={b.total}>
                                             {b.total}:{" "}
                                             {b.possibleSets.map((c) => {
                                                 return (
-                                                    <div className="set">
-                                                        {" "}
+                                                    <div
+                                                        className="set"
+                                                        key={c.toString()}
+                                                    >
                                                         {c.map((d) => {
-                                                            return d;
+                                                            return (
+                                                                <span key={d}>
+                                                                    {d}
+                                                                </span>
+                                                            );
                                                         })}
                                                     </div>
                                                 );
