@@ -40,7 +40,7 @@
 
     color-scheme: light dark;
     color: var(--primary-content);
-    background-color: var(--primary-main);
+    background-color: white;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -55,7 +55,6 @@
     text-align: left;
 }
 
-h1 {
-    font-size: 5em;
-    line-height: 1.1;
+a {
+    color: var(--secondary-content);
 }

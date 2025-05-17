@@ -61,6 +61,15 @@
     }
 
     .banner .menu {
-        display: block;
+        display: flex;
+        column-gap: 15px;
+        line-height: 2em;
+        font-size: medium;
+        align-content: center;
+        height: 100%;
+    }
+
+    .banner .menu a {
+        align-content: center;
     }
 }
