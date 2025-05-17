@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Stardew from "./pages/Stardew";
 import Header from "./molecules/Header";
 import { MenuLinks } from "./types/MenuLinks";
+import Killer from "./pages/Killer";
 
 const pages: MenuLinks = [
     { link: "/about", text: "About Me" },
@@ -41,6 +42,10 @@ function App() {
                 <Route
                     path="/about"
                     element={<Page child={<AboutMe />} title="About Me" />}
+                />
+                <Route
+                    path="/killer"
+                    element={<Page child={<Killer />} title="Killer" />}
                 />
                 <Route
                     path="/stardew"
