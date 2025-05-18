@@ -11,7 +11,7 @@ const Toggle = ({
 }) => {
     return (
         <>
-            <div>
+            <div className="toggle-wrapper">
                 <label htmlFor={label.replace(/\s/i, "")}>{label}</label>
                 <button
                     id={label.replace(/\s/i, "")}

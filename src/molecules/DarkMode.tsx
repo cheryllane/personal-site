@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Toggle from "../atoms/Toggle";
+import "./DarkMode.css";
 
 const DarkMode = () => {
     const [darkMode, setDarkMode] = useState(

@@ -1,0 +1,12 @@
+.toggle-wrapper {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    text-align: right;
+    background-color: var(--primary-main);
+}
+
+.toggle {
+    float: right;
+    margin-left: 1em;
+}
