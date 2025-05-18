@@ -1,4 +1,4 @@
-button {
+.info-button {
     border: 1px solid --text-light;
     background-color: --button-blue;
     width: 1.4em;
@@ -10,7 +10,7 @@ button {
     font-size: 1em;
 }
 
-.infoPopover {
+.info-popover {
     display: block;
     position: static;
     background-color: darkcyan;

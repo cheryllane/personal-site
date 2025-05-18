@@ -7,6 +7,7 @@ function Info({ text }: { text: string }) {
     return (
         <>
             <button
+                className="info-button"
                 aria-description="Button that displays help text"
                 onClick={(e) => {
                     e.preventDefault();
@@ -15,7 +16,7 @@ function Info({ text }: { text: string }) {
             >
                 &#9432;
             </button>
-            {displayInfo ? <div className="infoPopover">{text}</div> : <></>}
+            {displayInfo ? <div className="info-popover">{text}</div> : <></>}
         </>
     );
 }

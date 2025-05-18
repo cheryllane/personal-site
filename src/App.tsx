@@ -6,6 +6,7 @@ import Stardew from "./pages/Stardew";
 import Header from "./molecules/Header";
 import { MenuLinks } from "./types/MenuLinks";
 import Killer from "./pages/Killer";
+import DarkMode from "./molecules/DarkMode";
 
 const pages: MenuLinks = [
     { link: "/about", text: "About Me" },
@@ -30,6 +31,7 @@ const Page = ({ child, title }: { child: JSX.Element; title?: string }) => {
             >
                 {child}
             </div>
+            <DarkMode></DarkMode>
         </>
     );
 };

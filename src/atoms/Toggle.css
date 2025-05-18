@@ -1,0 +1,28 @@
+label {
+    font-size: small;
+}
+
+.toggle {
+    display: block;
+    width: 4em;
+    height: 2em;
+    border-radius: 2em;
+    background-color: var(--primary-content);
+    border-color: var(--secondary-content);
+}
+
+.toggle::after {
+    content: "";
+    background-color: var(--primary-main);
+    display: block;
+    height: 1.4em;
+    width: 1.4em;
+    left: 0em;
+    position: relative;
+    border-radius: 2em;
+    transition: left 0.5s ease 0s;
+}
+
+[aria-pressed="true"].toggle::after {
+    left: 1.8em;
+}

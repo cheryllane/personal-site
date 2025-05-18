@@ -40,7 +40,7 @@
 
     color-scheme: light dark;
     color: var(--primary-content);
-    background-color: white;
+    background-color: var(--primary-main);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
