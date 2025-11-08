@@ -28,12 +28,6 @@
     border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
-/* Hover effect for cards with elevation change */
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px var(--shadow-dark);
-}
-
 /* Card header section */
 .card .card-header {
     flex: 0 0 100%;
@@ -62,22 +56,6 @@
 .card .card-text li {
     margin-bottom: 0.8em;
     position: relative;
-}
-
-/* Custom bullet point with animation */
-.card .card-text li::before {
-    content: "▸";
-    color: var(--accent-dark);
-    font-weight: bold;
-    position: absolute;
-    left: -1.2em;
-    transition: var(--transition);
-}
-
-/* Bullet point animation on card hover */
-.card:hover .card-text li::before {
-    left: -1.4em;
-    color: var(--secondary-content);
 }
 
 /* Responsive styles for mobile devices */

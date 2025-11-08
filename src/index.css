@@ -3,13 +3,13 @@
 :root {
     /* Pale lavender color palette without black */
     --primary-main: #f8f6ff;
-    --primary-content: #4a3d5a;
+    --primary-content: #5500bb;
     --secondary-main: #ede9fe;
     --secondary-content: #6b5b95;
     --accent-light: #ddd6fe;
     --accent-medium: #c4b5fd;
     --accent-dark: #9333ea;
-    --gradient-primary: linear-gradient(135deg, #f8f6ff 0%, #ede9fe 100%);
+    --gradient-primary: linear-gradient(135deg, #f8f6ff 0%, #dfd8ff 100%);
     --gradient-secondary: linear-gradient(135deg, #ddd6fe 0%, #9333ea 100%);
     --shadow-light: rgba(147, 51, 234, 0.08);
     --shadow-medium: rgba(147, 51, 234, 0.15);

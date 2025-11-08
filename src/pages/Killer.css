@@ -1,5 +1,44 @@
 /* Killer Instinct Combo Calculator Styles */
 
+/* Container for filter control buttons */
+.filter-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5em;
+    padding: 1em;
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius);
+    box-shadow: 0 3px 10px var(--shadow-light);
+}
+
+/* Unified button styling for all buttons */
+.killer-button {
+    padding: 0.6em 1.2em;
+    border: none;
+    border-radius: calc(var(--border-radius) - 4px);
+    background: var(--accent-medium);
+    color: var(--primary-content);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+.killer-button:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow-medium);
+}
+
+/* Disabled state for buttons */
+.killer-button[aria-disabled="true"] {
+    background: var(--accent-dark);
+    color: var(--primary-main);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--shadow-medium);
+}
+
 /* Filter section for cage selection */
 .filter-section {
     margin-bottom: 2em;
@@ -23,56 +62,6 @@
     flex-wrap: wrap;
     gap: 0.5em;
     margin-bottom: 1em;
-}
-
-/* Individual filter button styling */
-.filter-button {
-    padding: 0.6em 1.2em;
-    border: none;
-    border-radius: calc(var(--border-radius) - 4px);
-    background: var(--gradient-secondary);
-    color: var(--primary-content);
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: 0 2px 5px var(--shadow-light);
-}
-
-.filter-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px var(--shadow-medium);
-}
-
-/* Active/selected filter button state */
-.filter-button[aria-disabled="true"] {
-    background: var(--accent-dark);
-    color: var(--primary-main);
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--shadow-medium);
-}
-
-/* Clear filters button */
-.clear-button {
-    padding: 0.6em 1.2em;
-    border: 2px solid var(--accent-medium);
-    background: transparent;
-    border-radius: calc(var(--border-radius) - 4px);
-    color: var(--secondary-content);
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.clear-button:hover {
-    background: var(--accent-medium);
-    transform: translateY(-2px);
-}
-
-/* Disabled state for clear button */
-.clear-button[aria-disabled="true"] {
-    border-color: var(--accent-dark);
-    color: var(--accent-dark);
-    transform: scale(1.05);
 }
 
 /* Individual cage section with animation */
@@ -100,7 +89,7 @@
     margin: 0;
 }
 
-/* Individual combination item with hover effect */
+/* Individual combination item */
 .combination-item {
     background: rgba(221, 214, 254, 0.1);
     border-radius: calc(var(--border-radius) - 4px);
@@ -108,11 +97,6 @@
     margin-bottom: 0.8em;
     border-left: 4px solid var(--accent-dark);
     transition: var(--transition);
-}
-
-.combination-item:hover {
-    background: rgba(221, 214, 254, 0.2);
-    transform: translateX(5px);
 }
 
 /* Total display for each combination */
@@ -159,8 +143,19 @@
     margin-right: 0.2em;
 }
 
+/* Highlighted number styling */
+.highlighted-number {
+    font-weight: 700;
+    color: var(--accent-dark);
+}
+
 /* Responsive styles for mobile devices */
 @media (max-width: 768px) {
+    .filter-controls {
+        flex-direction: column;
+        gap: 1em;
+    }
+
     .filter-section {
         padding: 1em;
     }

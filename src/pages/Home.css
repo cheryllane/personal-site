@@ -41,11 +41,6 @@ h1 {
     transition: var(--transition);
 }
 
-.card .card-text li:hover {
-    background: rgba(221, 214, 254, 0.2);
-    transform: translateX(5px);
-}
-
 /* Links within list items */
 .card .card-text li a {
     font-weight: 600;

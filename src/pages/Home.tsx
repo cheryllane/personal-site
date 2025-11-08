@@ -9,7 +9,7 @@ function Home() {
             <div className="card-text">
                 <p>Welcome to my personal website.</p>
                 <p>
-                    It's a work in progress
+                    It's a work in progress{" "}
                     <a href="https://github.com/cheryllane/personal-site/">
                         which can be found on GitHub
                     </a>
