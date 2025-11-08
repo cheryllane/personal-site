@@ -1,13 +1,89 @@
+/* App Component Styles */
+
+/* Main card component with glass morphism effect */
 .card {
-    padding: 2em;
+    padding: 2.5em;
     display: flex;
     flex-wrap: wrap;
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow-medium);
+    margin: 1.5em 0;
+    transition: var(--transition);
+    border: 1px solid rgba(221, 214, 254, 0.2);
+    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
 }
 
+/* Top accent border for cards */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-secondary);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* Hover effect for cards with elevation change */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--shadow-dark);
+}
+
+/* Card header section */
 .card .card-header {
     flex: 0 0 100%;
+    margin-bottom: 1.5em;
+    position: relative;
 }
 
+/* Card text content area */
 .card .card-text {
     flex: 0 0 100%;
+    line-height: 1.7;
+}
+
+/* Paragraph styling within cards */
+.card .card-text p {
+    margin-bottom: 1.2em;
+}
+
+/* List styling within cards */
+.card .card-text ul {
+    padding-left: 1.5em;
+    margin: 1.5em 0;
+}
+
+/* List item styling with animated bullet points */
+.card .card-text li {
+    margin-bottom: 0.8em;
+    position: relative;
+}
+
+/* Custom bullet point with animation */
+.card .card-text li::before {
+    content: "▸";
+    color: var(--accent-dark);
+    font-weight: bold;
+    position: absolute;
+    left: -1.2em;
+    transition: var(--transition);
+}
+
+/* Bullet point animation on card hover */
+.card:hover .card-text li::before {
+    left: -1.4em;
+    color: var(--secondary-content);
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    .card {
+        padding: 1.5em;
+        margin: 1em 0;
+    }
 }

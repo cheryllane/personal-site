@@ -1,22 +1,40 @@
 import { useState } from "react";
 import "./Icon.css";
 
-function Info({ text }: { text: string }) {
+function Info({
+    text,
+    onClick,
+    showInfo,
+}: {
+    text: string;
+    onClick?: () => void;
+    showInfo?: boolean;
+}) {
     const [displayInfo, setDisplayInfo] = useState(false);
+
+    const handleClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (onClick) {
+            onClick();
+        } else {
+            setDisplayInfo(!displayInfo);
+        }
+    };
+
+    const shouldShow = showInfo !== undefined ? showInfo : displayInfo;
 
     return (
         <>
             <button
                 className="info-button"
-                aria-description="Button that displays help text"
-                onClick={(e) => {
-                    e.preventDefault();
-                    setDisplayInfo(!displayInfo);
-                }}
+                aria-label="Show translation"
+                onClick={handleClick}
             >
-                &#9432;
+                {shouldShow ? "👁️" : "ℹ️"}
             </button>
-            {displayInfo ? <div className="info-popover">{text}</div> : <></>}
+            {shouldShow && <div className="info-popover">{text}</div>}
         </>
     );
 }

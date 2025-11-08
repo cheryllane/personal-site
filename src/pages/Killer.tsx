@@ -14,68 +14,108 @@ function Killer() {
     }, []);
 
     return (
-        <>
-            <p>Filter number of squares in the cage:</p>
-            {killerData?.map((a) => {
-                return (
+        <div className="card">
+            <div className="card-header">
+                <h1>Killer Sudoku Helper</h1>
+            </div>
+            <div className="card-text">
+                <div className="filter-section">
+                    <p>Filter number of squares in the cage:</p>
+                    <div className="filter-buttons">
+                        {killerData?.map((a) => {
+                            return (
+                                <button
+                                    key={a.numberOfSquares}
+                                    className="filter-button"
+                                    aria-disabled={
+                                        squaresFilter === a.numberOfSquares
+                                    }
+                                    onClick={() => {
+                                        setSquaresFilter(a.numberOfSquares);
+                                    }}
+                                >
+                                    {a.numberOfSquares}{" "}
+                                    {a.numberOfSquares === 1
+                                        ? "Square"
+                                        : "Squares"}
+                                </button>
+                            );
+                        })}
+                    </div>
                     <button
-                        key={a.numberOfSquares}
-                        aria-disabled={squaresFilter === a.numberOfSquares}
-                        onClick={(e) => {
-                            e.preventDefault;
-                            setSquaresFilter(a.numberOfSquares);
+                        className="clear-button"
+                        aria-disabled={squaresFilter === null}
+                        onClick={() => {
+                            setSquaresFilter(null);
                         }}
                     >
-                        {a.numberOfSquares}
+                        Clear Filter
                     </button>
-                );
-            })}
-            <button
-                aria-disabled={squaresFilter === null}
-                onClick={(e) => {
-                    e.preventDefault;
-                    setSquaresFilter(null);
-                }}
-            >
-                Clear
-            </button>
-            {killerData?.map((a) => {
-                return (
-                    <>
-                        {(squaresFilter === a.numberOfSquares ||
-                            squaresFilter === null) && (
-                            <div key={a.numberOfSquares}>
-                                <h2>{a.numberOfSquares}</h2>
-                                {a.combinations.map((b) => {
-                                    return (
-                                        <li key={b.total}>
-                                            {b.total}:{" "}
-                                            {b.possibleSets.map((c) => {
-                                                return (
-                                                    <div
-                                                        className="set"
-                                                        key={c.toString()}
-                                                    >
-                                                        {c.map((d) => {
-                                                            return (
-                                                                <span key={d}>
-                                                                    {d}
-                                                                </span>
-                                                            );
-                                                        })}
+                </div>
+
+                {killerData?.map((a) => {
+                    return (
+                        <div key={a.numberOfSquares}>
+                            {(squaresFilter === a.numberOfSquares ||
+                                squaresFilter === null) && (
+                                <div className="cage-section">
+                                    <h2>
+                                        {a.numberOfSquares}{" "}
+                                        {a.numberOfSquares === 1
+                                            ? "Square"
+                                            : "Squares"}
+                                    </h2>
+                                    <ul className="combinations-list">
+                                        {a.combinations.map((b) => {
+                                            return (
+                                                <li
+                                                    key={b.total}
+                                                    className="combination-item"
+                                                >
+                                                    <div className="combination-total">
+                                                        Total: {b.total}
                                                     </div>
-                                                );
-                                            })}
-                                        </li>
-                                    );
-                                })}
-                            </div>
-                        )}
-                    </>
-                );
-            })}
-            <div className="card"></div>
-        </>
+                                                    <div className="set-container">
+                                                        {b.possibleSets.map(
+                                                            (c) => {
+                                                                return (
+                                                                    <div
+                                                                        className="set"
+                                                                        key={c.toString()}
+                                                                    >
+                                                                        {c.map(
+                                                                            (
+                                                                                d
+                                                                            ) => {
+                                                                                return (
+                                                                                    <span
+                                                                                        key={
+                                                                                            d
+                                                                                        }
+                                                                                    >
+                                                                                        {
+                                                                                            d
+                                                                                        }
+                                                                                    </span>
+                                                                                );
+                                                                            }
+                                                                        )}
+                                                                    </div>
+                                                                );
+                                                            }
+                                                        )}
+                                                    </div>
+                                                </li>
+                                            );
+                                        })}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
     );
 }
 

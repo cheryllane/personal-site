@@ -1,46 +1,51 @@
 /* Set Colour Variables */
 
 :root {
-    --primary-main: #faedf8;
-    --primary-content: #531941;
-    --secondary-main: #f5d9f1;
-    --secondary-content: #913a78;
-    /* --primary-main: #562634;
-    --primary-content: #d7a4b3;
-    --primary-light: #793649;
-    --primary-dark: #33161f;
-    --secondary-main: #4c5626;
-    --secondary-content: #ccd7a4;
-    --secondary-light: #6b7936;
-    --secondary-dark: #2d3316; */
+    /* Pale lavender color palette without black */
+    --primary-main: #f8f6ff;
+    --primary-content: #4a3d5a;
+    --secondary-main: #ede9fe;
+    --secondary-content: #6b5b95;
+    --accent-light: #ddd6fe;
+    --accent-medium: #c4b5fd;
+    --accent-dark: #9333ea;
+    --gradient-primary: linear-gradient(135deg, #f8f6ff 0%, #ede9fe 100%);
+    --gradient-secondary: linear-gradient(135deg, #ddd6fe 0%, #9333ea 100%);
+    --shadow-light: rgba(147, 51, 234, 0.08);
+    --shadow-medium: rgba(147, 51, 234, 0.15);
+    --shadow-dark: rgba(74, 61, 90, 0.2);
+    --border-radius: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme="dark"] {
-    --primary-main: #531941;
-    --primary-content: #faedf8;
-    --secondary-main: #913a78;
-    --secondary-content: #f5d9f1;
-
-    /* --primary-main: #562634;
-    --primary-content: #d7a4b3;
-    --primary-light: #793649;
-    --primary-dark: #33161f;
-    --secondary-main: #4c5626;
-    --secondary-content: #ccd7a4;
-    --secondary-light: #6b7936;
-    --secondary-dark: #2d3316; */
+    --primary-main: #2d2438;
+    --primary-content: #ede9fe;
+    --secondary-main: #3d2f4f;
+    --secondary-content: #c4b5fd;
+    --accent-light: #4a3d5a;
+    --accent-medium: #6b5b95;
+    --accent-dark: #9333ea;
+    --gradient-primary: linear-gradient(135deg, #2d2438 0%, #3d2f4f 100%);
+    --gradient-secondary: linear-gradient(135deg, #6b5b95 0%, #9333ea 100%);
+    --shadow-light: rgba(237, 233, 254, 0.05);
+    --shadow-medium: rgba(237, 233, 254, 0.1);
+    --shadow-dark: rgba(221, 214, 254, 0.15);
 }
 
 /* Set Global Styling */
 
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
+    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
     font-weight: 400;
+    font-size: 16px;
 
     color-scheme: light dark;
     color: var(--primary-content);
     background-color: var(--primary-main);
+    background-image: var(--gradient-primary);
+    min-height: 100vh;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -49,12 +54,114 @@
 }
 
 #root {
-    max-width: 60rem;
+    max-width: 70rem;
     margin: 0 auto;
     padding: 2rem;
     text-align: left;
+    min-height: 100vh;
+    box-shadow: 0 0 40px var(--shadow-light);
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--primary-main);
+    transition: var(--transition);
 }
 
 a {
     color: var(--secondary-content);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+a:hover {
+    color: var(--accent-dark);
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-secondary);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
+h4 {
+    font-size: 1.5rem;
+}
+h5 {
+    font-size: 1.25rem;
+}
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    margin-bottom: 1.2rem;
+}
+
+button {
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    #root {
+        margin: 0;
+        border-radius: 0;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
 }

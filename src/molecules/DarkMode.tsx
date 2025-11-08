@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Toggle from "../atoms/Toggle";
 import "./DarkMode.css";
 
 const DarkMode = () => {
@@ -20,14 +19,21 @@ const DarkMode = () => {
         return () => {};
     }, [darkMode]);
 
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+    };
+
     return (
-        <>
-            <Toggle
-                label="Dark Mode toggle:"
-                current={darkMode}
-                onChange={setDarkMode}
-            />
-        </>
+        <div className="dark-mode-toggle" onClick={toggleDarkMode}>
+            <span className="dark-mode-label">Dark Mode</span>
+            <div className="dark-mode-switch">
+                <div className={`dark-mode-slider ${darkMode ? "active" : ""}`}>
+                    <span className="dark-mode-icon">
+                        {darkMode ? "☀️" : "🌙"}
+                    </span>
+                </div>
+            </div>
+        </div>
     );
 };
 

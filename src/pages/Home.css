@@ -1,4 +1,60 @@
+/* Home Page Styles */
+
+/* Hero section with animated title */
 h1 {
-    font-size: 5em;
+    font-size: 4em;
     line-height: 1.1;
+    margin-bottom: 0.5em;
+    text-align: center;
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Fade in animation for hero title */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card list styling */
+.card .card-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Individual list items with hover effects */
+.card .card-text li {
+    padding: 0.8em 1.2em;
+    margin-bottom: 0.8em;
+    background: rgba(221, 214, 254, 0.1);
+    border-radius: calc(var(--border-radius) - 4px);
+    border-left: 4px solid var(--accent-dark);
+    transition: var(--transition);
+}
+
+.card .card-text li:hover {
+    background: rgba(221, 214, 254, 0.2);
+    transform: translateX(5px);
+}
+
+/* Links within list items */
+.card .card-text li a {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
 }
