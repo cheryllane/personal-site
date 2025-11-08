@@ -9,16 +9,15 @@ function Home() {
             <div className="card-text">
                 <p>Welcome to my personal website.</p>
                 <p>
-                    It's a work in progress, I'm uploading this live from my
-                    working branch,{" "}
-                    <a href="https://github.com/cheryllane/personal-site/tree/feature/killer-sudoku">
+                    It's a work in progress
+                    <a href="https://github.com/cheryllane/personal-site/">
                         which can be found on GitHub
                     </a>
                     .
                 </p>
                 <p>
                     I've got some simple tools that I've made for myself and
-                    host to make them easy second screen tools.
+                    host here to make them easy second screen tools.
                 </p>
                 <ul>
                     <li>
