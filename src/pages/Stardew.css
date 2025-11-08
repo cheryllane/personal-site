@@ -1,0 +1,299 @@
+/* Stardew Valley Bundle Tracker Styles */
+
+/* Main container with centered layout */
+.stardew-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+/* Page header section */
+.stardew-header {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.stardew-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stardew-header p {
+    font-size: 1.1em;
+    color: var(--secondary-content);
+    margin-bottom: 1.5em;
+}
+
+/* Progress tracking section */
+.progress-section {
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius);
+    padding: 1.5em;
+    margin-bottom: 2em;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    text-align: center;
+}
+
+/* Progress bar container */
+.progress-bar {
+    width: 100%;
+    height: 2em;
+    background: rgba(221, 214, 254, 0.2);
+    border-radius: 2em;
+    overflow: hidden;
+    margin: 1em 0;
+    position: relative;
+}
+
+/* Animated progress fill */
+.progress-fill {
+    height: 100%;
+    background: var(--gradient-secondary);
+    border-radius: 2em;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-content);
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+/* Bundle items grid layout */
+.bundles-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5em;
+}
+
+/* Individual bundle card */
+.bundle-item {
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius);
+    padding: 1.5em;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    transition: var(--transition);
+    border: 1px solid rgba(221, 214, 254, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top accent border for bundle cards */
+.bundle-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-secondary);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* Hover effect for bundle cards */
+.bundle-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px var(--shadow-medium);
+}
+
+/* Special styling for completed bundles */
+.bundle-item.completed {
+    background: linear-gradient(
+        135deg,
+        rgba(147, 51, 234, 0.1) 0%,
+        rgba(147, 51, 234, 0.2) 100%
+    );
+    border-color: var(--accent-medium);
+}
+
+.bundle-item.completed::before {
+    background: var(--accent-dark);
+}
+
+/* Bundle form layout with checkbox and content */
+.bundle-form {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+/* Checkbox container */
+.bundle-checkbox {
+    position: relative;
+    margin-top: 0.2em;
+}
+
+.bundle-checkbox input[type="checkbox"] {
+    width: 1.5em;
+    height: 1.5em;
+    accent-color: var(--accent-dark);
+    cursor: pointer;
+}
+
+/* Bundle text content container */
+.bundle-content {
+    flex: 1;
+}
+
+/* Japanese text styling */
+.bundle-japanese {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--primary-content);
+    margin-bottom: 0.5em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+/* Translation text with toggle animation */
+.bundle-translation {
+    font-size: 0.9em;
+    color: var(--secondary-content);
+    margin-bottom: 0.5em;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+/* Source attribution text */
+.bundle-source {
+    font-size: 0.85em;
+    color: var(--primary-content);
+    opacity: 0.8;
+    font-style: italic;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+/* Hidden state for collapsible content */
+.bundle-translation.hidden,
+.bundle-source.hidden {
+    max-height: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+/* Visible state for collapsible content */
+.bundle-translation.visible,
+.bundle-source.visible {
+    max-height: 100px;
+    opacity: 1;
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Slide down animation for content reveal */
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        max-height: 100px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Info button for displaying additional context */
+.info-button {
+    background: var(--gradient-secondary);
+    border: none;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-content);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9em;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.info-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px var(--shadow-medium);
+}
+
+/* Info popover tooltip */
+.info-popover {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient-secondary);
+    color: var(--primary-content);
+    padding: 0.8em 1.2em;
+    border-radius: calc(var(--border-radius) - 4px);
+    box-shadow: 0 5px 15px var(--shadow-medium);
+    z-index: 10;
+    font-size: 0.9em;
+    white-space: nowrap;
+    margin-top: 0.5em;
+    max-width: 300px;
+    white-space: normal;
+}
+
+/* Arrow pointer for popover */
+.info-popover::before {
+    content: "";
+    position: absolute;
+    top: -0.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;
+    border-bottom: 0.5em solid var(--accent-dark);
+}
+
+/* Clear progress button */
+.clear-button {
+    background: var(--gradient-secondary);
+    border: none;
+    color: var(--primary-content);
+    padding: 0.8em 1.5em;
+    border-radius: calc(var(--border-radius) - 4px);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1em;
+}
+
+.clear-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-medium);
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    .stardew-container {
+        padding: 1em;
+    }
+
+    .stardew-header h1 {
+        font-size: 2em;
+    }
+
+    .bundles-list {
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .bundle-item {
+        padding: 1em;
+    }
+
+    .bundle-japanese {
+        font-size: 1.1em;
+    }
+}
