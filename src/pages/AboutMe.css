@@ -54,23 +54,6 @@
     overflow: hidden;
 }
 
-/* Decorative star icon that animates on hover */
-.about-container li::before {
-    content: "✦";
-    position: absolute;
-    left: -10px;
-    color: var(--accent-dark);
-    font-size: 1.2em;
-    transition: var(--transition);
-}
-
-/* Hover effects for list items */
-.about-container li:hover {
-    background: rgba(221, 214, 254, 0.2);
-    transform: translateX(10px);
-    padding-left: 2em;
-}
-
 /* Star icon animation on hover */
 .about-container li:hover::before {
     left: 10px;
