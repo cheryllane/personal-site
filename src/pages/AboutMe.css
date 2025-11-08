@@ -1,0 +1,105 @@
+/* About Me Page Styles */
+
+/* Main container with centered layout */
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+/* Page title with gradient text */
+.about-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    text-align: center;
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Section headers with bottom border */
+.about-container h3 {
+    font-size: 1.8em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid var(--accent-medium);
+}
+
+/* Paragraph text styling */
+.about-container p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 1.2em;
+    color: var(--primary-content);
+}
+
+/* List container styling */
+.about-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5em 0;
+}
+
+/* Interactive list items with animated decoration */
+.about-container li {
+    padding: 0.8em 1.2em;
+    margin-bottom: 0.8em;
+    background: rgba(221, 214, 254, 0.1);
+    border-radius: calc(var(--border-radius) - 4px);
+    border-left: 4px solid var(--accent-dark);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative star icon that animates on hover */
+.about-container li::before {
+    content: "✦";
+    position: absolute;
+    left: -10px;
+    color: var(--accent-dark);
+    font-size: 1.2em;
+    transition: var(--transition);
+}
+
+/* Hover effects for list items */
+.about-container li:hover {
+    background: rgba(221, 214, 254, 0.2);
+    transform: translateX(10px);
+    padding-left: 2em;
+}
+
+/* Star icon animation on hover */
+.about-container li:hover::before {
+    left: 10px;
+}
+
+/* Highlighted text with gradient effect */
+.highlight {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 1em;
+    }
+
+    .about-container h2 {
+        font-size: 2em;
+    }
+
+    .about-container h3 {
+        font-size: 1.5em;
+    }
+
+    .about-container p {
+        font-size: 1em;
+    }
+}

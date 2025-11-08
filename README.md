@@ -1,50 +1,70 @@
-# React + TypeScript + Vite
+# My Personal Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hi, I'm Cheryl.
 
-Currently, two official plugins are available:
+I'm a web dev, currently a Senior Full Stack Engineer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This website was created to sit on my AWS account, cheaply (hosted on an S3 bucket, because I was too cheap for amplify), with a nice homepage for those who might stumble on it.
 
-## Expanding the ESLint configuration
+## How to run it
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+First, you'll need to install the packages I've used from NPM
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Then you can run it with 
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+npm run dev
+```
+
+It uses vite, so it's fast!
+
+## How to build it
+
+Install packages (as above) if you've not yet.
+
+Then you can build to static files with
+
+```
+npm run build
+```
+
+## Tools
+
+I made a few handy tools for myself, but I'll let you take a look.
+
+### Stardew Bundles
+
+I've been learning some Japanese for a while, and to practice, I've been playing Stardew Valley in Japanese. But, even in English, I have the problem of not remembering what I need to get and what I've already got in the bundles.
+
+This tool lists the bundles, what they contain and gives me a checklist that is stored in local storage.
+
+### Killer Sudoku
+
+Killer sudoku is my favourite kind of sudoku.
+
+How to sudoku:
+Normal sudoku consists of a 9x9 main grid, consisting of 9 3x3 small grids
+Each small grid, row and column contain the numbers 1-9, not repeated in any grid/row/column
+
+Normally this calls for a few prefilled cells (at least 17 cells must be filled to produce a unique solution).
+
+Killer sudoku adds "cages", dotted lines that contain 1-9 cells and have a total, found in the top left of the cage. Numbers in cages also do not repeat.
+
+There are limited ways to add up to each cage total, and killer sudoku books will usually have a cage reference page - I've torn mine out of the book because I find it very handy. If I'm doing killers on my PC, I'll reference https://godoku.com/play/killer/combinations/ as one of the only killer cage references online but I wanted a better option.
+
+I wanted a full list that I can filter as needed, so that I can filter to:
+* Cage total
+* Number of cells in cage
+* Known numbers
+* Not included numbers
+
+I'd also like a calculator built in, with custom buttons (45 / 90 / etc) specifically for killer maths (a small grid, row or column adds to 45, so a grid containing all cells for the cages 25 and 15 has 5 remaining).
+
+![Killer Maths](github_screenshots/killer-calc.png)
+
+Why? I'm here for puzzles, not memory games, thanks for asking. I also Google everything at work (I'm good at Google).
+

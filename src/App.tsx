@@ -3,14 +3,56 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import AboutMe from "./pages/AboutMe";
 import Home from "./pages/Home";
 import Stardew from "./pages/Stardew";
+import Header from "./molecules/Header";
+import { MenuLinks } from "./types/MenuLinks";
+import Killer from "./pages/Killer";
+
+const pages: MenuLinks = [
+    { link: "/about", text: "About Me" },
+    { link: "/stardew", text: "Stardew" },
+    { link: "/killer", text: "Killer" },
+];
+
+const Page = ({ child, title }: { child: JSX.Element; title?: string }) => {
+    // Allow an optional title prop to be passed that sets the page title
+    if (title) {
+        document.title = title;
+    }
+    return (
+        <>
+            <Header menuLinks={pages} />
+            <main
+                style={{
+                    position: "relative",
+                    top: "4.5em",
+                    marginBottom: "2em",
+                    minHeight: "calc(100vh - 6.5em)",
+                    animation: "fadeIn 0.5s ease-out",
+                }}
+            >
+                {child}
+            </main>
+        </>
+    );
+};
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<AboutMe />} />
-                <Route path="/stardew" element={<Stardew />} />
+                <Route path="/" element={<Page child={<Home />} />} />
+                <Route
+                    path="/about"
+                    element={<Page child={<AboutMe />} title="About Me" />}
+                />
+                <Route
+                    path="/killer"
+                    element={<Page child={<Killer />} title="Killer" />}
+                />
+                <Route
+                    path="/stardew"
+                    element={<Page child={<Stardew />} title="Stardew" />}
+                />
             </Routes>
         </BrowserRouter>
     );

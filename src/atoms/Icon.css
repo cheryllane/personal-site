@@ -1,17 +1,57 @@
-button {
-    border: 1px solid --text-light;
-    background-color: --button-blue;
-    width: 1.4em;
-    height: 1.4em;
-    position: relative;
-    line-height: 0em;
-    padding: 0em;
-    border-radius: 2em;
-    font-size: 1em;
+/* Icon Component Styles */
+
+/* Info button with circular design */
+.info-button {
+    background: var(--gradient-secondary);
+    border: none;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-content);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9em;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-left: 0.5em;
 }
 
-.infoPopover {
-    display: block;
-    position: static;
-    background-color: darkcyan;
+/* Hover effect for info button */
+.info-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px var(--shadow-medium);
+}
+
+/* Info popover tooltip */
+.info-popover {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient-secondary);
+    color: var(--primary-content);
+    padding: 0.8em 1.2em;
+    border-radius: calc(var(--border-radius) - 4px);
+    box-shadow: 0 5px 15px var(--shadow-medium);
+    z-index: 10;
+    font-size: 0.9em;
+    white-space: nowrap;
+    margin-top: 0.5em;
+    max-width: 300px;
+    white-space: normal;
+}
+
+/* Arrow pointer for popover */
+.info-popover::before {
+    content: "";
+    position: absolute;
+    top: -0.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;
+    border-bottom: 0.5em solid var(--accent-dark);
 }

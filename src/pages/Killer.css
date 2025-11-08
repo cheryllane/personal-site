@@ -1,0 +1,175 @@
+/* Killer Instinct Combo Calculator Styles */
+
+/* Filter section for cage selection */
+.filter-section {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow-light);
+}
+
+/* Filter section description text */
+.filter-section p {
+    font-weight: 600;
+    margin-bottom: 1em;
+    color: var(--primary-content);
+    font-size: 1.1em;
+}
+
+/* Container for filter buttons */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+
+/* Individual filter button styling */
+.filter-button {
+    padding: 0.6em 1.2em;
+    border: none;
+    border-radius: calc(var(--border-radius) - 4px);
+    background: var(--gradient-secondary);
+    color: var(--primary-content);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+.filter-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow-medium);
+}
+
+/* Active/selected filter button state */
+.filter-button[aria-disabled="true"] {
+    background: var(--accent-dark);
+    color: var(--primary-main);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--shadow-medium);
+}
+
+/* Clear filters button */
+.clear-button {
+    padding: 0.6em 1.2em;
+    border: 2px solid var(--accent-medium);
+    background: transparent;
+    border-radius: calc(var(--border-radius) - 4px);
+    color: var(--secondary-content);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.clear-button:hover {
+    background: var(--accent-medium);
+    transform: translateY(-2px);
+}
+
+/* Disabled state for clear button */
+.clear-button[aria-disabled="true"] {
+    border-color: var(--accent-dark);
+    color: var(--accent-dark);
+    transform: scale(1.05);
+}
+
+/* Individual cage section with animation */
+.cage-section {
+    margin-bottom: 2em;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Cage section headers */
+.cage-section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    padding: 0.5em 1em;
+    background: var(--gradient-secondary);
+    color: var(--primary-content);
+    border-radius: calc(var(--border-radius) - 4px);
+    box-shadow: 0 3px 10px var(--shadow-light);
+    -webkit-text-fill-color: unset;
+}
+
+/* List of combo combinations */
+.combinations-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual combination item with hover effect */
+.combination-item {
+    background: rgba(221, 214, 254, 0.1);
+    border-radius: calc(var(--border-radius) - 4px);
+    padding: 1em;
+    margin-bottom: 0.8em;
+    border-left: 4px solid var(--accent-dark);
+    transition: var(--transition);
+}
+
+.combination-item:hover {
+    background: rgba(221, 214, 254, 0.2);
+    transform: translateX(5px);
+}
+
+/* Total display for each combination */
+.combination-total {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--accent-dark);
+    margin-bottom: 0.5em;
+}
+
+/* Container for sets in a combination */
+.set-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 0.5em;
+}
+
+/* Individual set styling */
+.set {
+    display: inline-flex;
+    padding: 0.5em 1em;
+    background: var(--gradient-primary);
+    border-radius: calc(var(--border-radius) - 6px);
+    border: 1px solid rgba(221, 214, 254, 0.2);
+    transition: var(--transition);
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+.set:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+/* Text styling within sets */
+.set span {
+    font-weight: 500;
+    color: var(--primary-content);
+}
+
+/* Separator between numbers in a set */
+.set span:not(:last-child)::after {
+    content: ", ";
+    margin-right: 0.2em;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    .filter-section {
+        padding: 1em;
+    }
+
+    .filter-buttons {
+        justify-content: center;
+    }
+
+    .cage-section h2 {
+        font-size: 1.5em;
+    }
+}
